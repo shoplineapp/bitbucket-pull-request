@@ -10,7 +10,7 @@ fi
 set -x
 
 origin_branch=$(git rev-parse --abbrev-ref HEAD)
-repo=$(basename -s .git `git config --get remote.origin.url`)
+repo=$(basename `git config --get remote.origin.url` | cut -d . -f1)
 
 # get access token
 token=$(curl -X POST -u "${BITBUCKET_CLIENT_ID}:${BITBUCKET_SECRET}" \
