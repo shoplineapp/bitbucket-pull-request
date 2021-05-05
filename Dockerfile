@@ -1,6 +1,6 @@
 FROM alpine:3.13.5
 
-RUN apk add jq git openssh \
+RUN apk add jq git openssh curl \
     && mkdir -p /root/.ssh/ \
     && ssh-keyscan bitbucket.org > /root/.ssh/known_hosts
 
