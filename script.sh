@@ -42,5 +42,6 @@ if [ "$type" = "error" ]; then
   echo "$response" | jq .error.message
   exit 1
 elif [ "$type" = "pullrequest" ]; then
-  echo "PR link: $response" | jq .links.html.href -r -M
+  link=$(echo "$response" | jq .links.html.href -r -M)
+  echo "PR link: ${link}"
 fi
