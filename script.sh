@@ -27,7 +27,7 @@ response=$(curl --location --request POST "https://api.bitbucket.org/2.0/reposit
     \"closed\": false,
     \"source\": {
         \"branch\": {
-            \"name\": \"${TARGET_BRANCH}\"
+            \"name\": \"${SOURCE_BRANCH}\"
         }
     },
     \"destination\": {
