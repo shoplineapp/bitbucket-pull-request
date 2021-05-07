@@ -7,7 +7,9 @@ if [ -z "$BITBUCKET_CLIENT_ID" ] || [ -z "$BITBUCKET_SECRET" ]; then
     exit 1
 fi
 
-set -x
+if [ -n "$DEBUG" ]; then
+  set -x
+fi
 
 origin_branch=$(git rev-parse --abbrev-ref HEAD)
 repo=$(basename `git config --get remote.origin.url` | cut -d . -f1)
