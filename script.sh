@@ -12,7 +12,7 @@ if [ -n "$DEBUG" ]; then
 fi
 
 origin_branch=$(git rev-parse --abbrev-ref HEAD)
-repo=$(basename `git config --get remote.origin.url` | cut -d . -f1)
+repo=$(basename `git config --get remote.origin.url` | sed s/.git$//)
 
 # get access token
 token=$(curl -X POST -u "${BITBUCKET_CLIENT_ID}:${BITBUCKET_SECRET}" \
